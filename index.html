@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPIC - The Tapestry of Penelope</title>
+    <!-- CORRECCIÓN: Rutas en minúsculas -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="intro" class="scene active">
+        <div class="intro-container">
+            <h1>Would you fall in love with me again?</h1>
+            <p id="introPrompt" class="pulse-text">Presiona ESPACIO dos veces para entrar</p>
+        </div>
+    </div>
+
+    <div id="room" class="scene">
+        <div class="room-background"></div>
+        <div id="scrollPrompt" class="scroll-indicator">
+            <p>Haz SCROLL hacia arriba para acercarte al tapiz</p>
+            <div class="arrow-down">↓</div>
+        </div>
+    </div>
+
+    <div id="maze" class="scene">
+        <div id="timerContainer">
+            <span class="timer-icon">⏳</span>
+            <div id="timer">5:46</div>
+        </div>
+
+        <button id="pauseBtn" class="control-btn">⏸️ Pausa</button>
+
+        <div id="pauseOverlay" class="pause-overlay">
+            <div class="pause-card">
+                <h2>Odisea en Pausa</h2>
+                <p>Presiona el botón o ESPACIO para continuar protegiendo el reino.</p>
+            </div>
+        </div>
+
+        <!-- Letrero de Advertencia por Inactividad -->
+        <div id="warningToast" class="warning-toast">
+            <p>"Si tus manos se detienen, los hilos se congelan... ¡Sigue tecleando o el laberinto los arrastrará al olvido para siempre!"</p>
+        </div>
+
+        <!-- Superposición de GAME OVER -->
+        <div id="gameOverOverlay" class="game-over-overlay">
+            <div class="game-over-card">
+                <h2>The strings are cut...</h2>
+                <p class="game-over-quote">"I neglected the songs of us... and the labyrinth took what was left of my home."</p>
+                <p class="game-over-instructions">No lograste completar el reencuentro a tiempo y los pretendientes destruyeron el tapiz.</p>
+                <button id="retryBtn" class="retry-btn">🔄 Intentar de nuevo</button>
+            </div>
+        </div>
+
+        <div id="challengeContainer">
+            <p id="challengeInstruction">Cargando...</p>
+            <div id="challengeKeys"></div>
+        </div>
+        
+        <div id="mazeBackground"></div>
+        
+        <div id="odysseus" class="character-avatar"></div>
+        <div id="penelope" class="character-avatar"></div>
+    </div>
+
+    <div id="ending" class="scene">
+        <div class="dark-overlay"></div>
+        
+        <div id="romanceBlock" class="ending-text">
+            <h2>I'd fall in love with you again.</h2>
+            <div class="united-characters"></div>
+        </div>
+
+        <div id="creditsBlock" class="credits-container">
+            <div class="credits-scroll" id="creditsText"></div>
+        </div>
+
+        <!-- Mensaje final pulido -->
+        <div id="thanksBlock" class="thanks-container">
+            <h2>¡Lo lograste!</h2>
+            <p class="sub-thanks">Has protegido con éxito el tapiz y guiado de vuelta a Odiseo a los brazos de Ítaca.</p>
+            <p class="quote-thanks">"All I hear are strings... and the song of a home we built together."</p>
+        </div>
+    </div>
+
+    <audio id="epicSong" src="audio/would_you_fall_in_love.mp3" preload="auto"></audio>
+
+    <!-- CORRECCIÓN: Ruta en minúsculas -->
+    <script src="script.js"></script>
+</body>
+</html>
