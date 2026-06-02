@@ -331,27 +331,29 @@ function verifyUserKey(pressedKey) {
     }
 }
 
+// CORRECCIÓN: Rutas estricta de nombres con mayúscula inicial según tu repositorio
 function setPreGameState() {
-    odysseus.style.backgroundImage = "url('img/odiseo_parado.png')";
-    penelope.style.backgroundImage = "url('img/penelope_parada.png')";
+    odysseus.style.backgroundImage = "url('./img/Odiseo_parado.png')";
+    penelope.style.backgroundImage = "url('./img/Penelope_parada.png')";
 }
 
+// CORRECCIÓN: Nombres exactos de archivos para el estado de tecleo dinámico
 function setTypingState(typing) {
     isUserTyping = typing;
     clearTimeout(typingTimeout);
     clearTimeout(absoluteInactivityTimeout);
 
     if (isUserTyping) {
-        odysseus.style.backgroundImage = "url('img/odiseo.gif')";
-        penelope.style.backgroundImage = "url('img/penelope.gif')";
+        odysseus.style.backgroundImage = "url('./img/Odiseo.gif')";
+        penelope.style.backgroundImage = "url('./img/Penelope.gif')";
 
         typingTimeout = setTimeout(() => {
             setTypingState(false);
         }, 5000);
         
     } else {
-        odysseus.style.backgroundImage = "url('img/odiseo_parado.png')";
-        penelope.style.backgroundImage = "url('img/penelope_parada.png')";
+        odysseus.style.backgroundImage = "url('./img/Odiseo_parado.png')";
+        penelope.style.backgroundImage = "url('./img/Penelope_parada.png')";
 
         if (gameStartedTypingPhase && userHasTypedAtLeastOnce && !isEndingTriggered && !gameOverTriggered && !waitingForClimax) {
             if (!hasShownWarning) {
@@ -464,96 +466,4 @@ function updateActColorsAndBox(time) {
         challengeContainer.style.borderColor = "#7209b7";
     } 
     else if (time >= 211 && time < 229) { 
-        maze.style.background = "linear-gradient(180deg, #240505, #000000)"; 
-        challengeContainer.style.borderColor = "#ff0000";
-    } 
-    else if (time >= 229 && time < 281) { 
-        maze.style.background = "linear-gradient(180deg, #d64f8f, #e67322)"; 
-        challengeContainer.style.borderColor = "#e67322";
-    }
-}
-
-function triggerGameOverSequence() {
-    gameOverTriggered = true;
-    song.pause();
-    clearTimeout(typingTimeout);
-    clearTimeout(absoluteInactivityTimeout);
-    warningToast.classList.remove("show"); 
-    gameOverOverlay.style.display = "flex";
-}
-
-function triggerVictorySequence() {
-    isEndingTriggered = true;
-    pauseBtn.style.display = "none"; 
-    
-    mazeBackground.style.transform = `translateY(${maxLabyrinthY}px)`;
-    
-    odysseus.style.backgroundImage = "url('img/odiseo_parado.png')";
-    penelope.style.backgroundImage = "url('img/penelope_parada.png')";
-
-    odysseus.style.transition = "all 1.2s cubic-bezier(0.25, 1, 0.5, 1)";
-    penelope.style.transition = "all 1.2s cubic-bezier(0.25, 1, 0.5, 1)";
-    
-    odysseus.style.left = "calc(50% - 85px)";
-    penelope.style.left = "calc(50% - 15px)";
-    odysseus.style.bottom = "85%";
-    penelope.style.bottom = "85%";
-
-    setTimeout(() => {
-        odysseus.style.opacity = "0";
-        penelope.style.opacity = "0";
-        document.getElementById("timerContainer").style.opacity = "0";
-        
-        maze.classList.remove("active");
-        ending.classList.add("active");
-    }, 1500);
-}
-
-function launchCreditsStyle() {
-    isCreditsTriggered = true;
-    romanceBlock.style.opacity = "0";
-    
-    setTimeout(() => {
-        romanceBlock.style.display = "none";
-        creditsBlock.style.display = "flex";
-        
-        // CORRECCIÓN: Créditos oficiales actualizados
-        creditsText.innerHTML = `
-            <p style="margin-bottom: 40px; font-size: 2.6rem; font-weight: bold; letter-spacing: 6px; color: #f0df92;">CRÉDITOS</p>
-            
-            <p style="margin-bottom: 10px; font-size: 1.3rem; color: #bca0dc;">DISEÑO DE PERSONAJE</p>
-            <p style="font-size: 1.8rem; margin-bottom: 40px;">Arantxa Vázquez y Andrea Olivares</p>
-            
-            <p style="margin-bottom: 10px; font-size: 1.3rem; color: #bca0dc;">PROGRAMACIÓN</p>
-            <p style="font-size: 1.8rem; margin-bottom: 40px;">Arantxa Vázquez</p>
-            
-            <p style="margin-bottom: 10px; font-size: 1.3rem; color: #bca0dc;">VÍDEO PROMOCIONAL</p>
-            <p style="font-size: 1.8rem; margin-bottom: 40px;">Andrea Olivares</p>
-            
-            <p style="margin-bottom: 10px; font-size: 1.3rem; color: #bca0dc;">DIRECCIÓN CREATIVA</p>
-            <p style="font-size: 1.8rem; margin-bottom: 40px;">Arantxa Vázquez y Andrea Olivares</p>
-            
-            <p style="margin-bottom: 10px; font-size: 1.3rem; color: #bca0dc;">MÚSICA</p>
-            <p style="font-size: 1.8rem; font-style: italic; margin-bottom: 40px;">Jorge Rivera Herrans para EPIC</p>
-            
-            <p style="margin-bottom: 10px; font-size: 1.3rem; color: #bca0dc;">ASESORAMIENTO</p>
-            <p style="font-size: 1.8rem; margin-bottom: 60px;">Malinalli Segura</p>
-            
-            <p style="font-size: 1.2rem; color: #666; letter-spacing: 2px;">¡Gracias por proteger los hilos de Ítaca!</p>
-        `;
-        
-        creditsText.style.animation = "crawlFilm 28s linear forwards";
-    }, 1000);
-
-    setTimeout(() => {
-        creditsBlock.style.opacity = "0";
-        setTimeout(() => {
-            creditsBlock.style.display = "none";
-            thanksBlock.style.display = "flex";
-            setTimeout(() => {
-                thanksBlock.style.opacity = "1";
-                thanksBlock.style.transform = "scale(1)";
-            }, 100);
-        }, 1500);
-    }, 28000);
-}
+        maze.style.background = "linear-gradient(180deg, #24
