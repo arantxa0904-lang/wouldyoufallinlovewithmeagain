@@ -69,7 +69,7 @@ h1 { font-size: 2.2rem; font-style: italic; margin-bottom: 25px; letter-spacing:
     left: 0;
     z-index: 5;
     opacity: 0.3; 
-    background-image: url('img/montaña.png'); 
+    background-image: url('img/montana.png'); 
     background-size: cover;
     background-position: bottom center;
     will-change: transform;
@@ -198,7 +198,7 @@ h1 { font-size: 2.2rem; font-style: italic; margin-bottom: 25px; letter-spacing:
     will-change: left, bottom;
 }
 
-/* CORRECCIÓN: Rutas de imágenes ajustadas a minúsculas */
+/* CORRECCIÓN: Rutas de imágenes ajustadas a minúsculas exactas */
 #odysseus { background-image: url('img/odiseo.gif'); left: 23%; bottom: 4%; }
 #penelope { background-image: url('img/penelope.gif'); left: 73%; bottom: 4%; }
 
@@ -213,7 +213,7 @@ h1 { font-size: 2.2rem; font-style: italic; margin-bottom: 25px; letter-spacing:
 .ending-text { text-align: center; z-index: 10; color: #fff; transition: opacity 1s ease-in-out; }
 .ending-text h2 { font-size: 2.4rem; font-style: italic; margin-bottom: 35px; color: #fff; text-shadow: 0 0 12px rgba(255,255,255,0.5); }
 
-/* CORRECCIÓN: Ruta a minúsculas */
+/* CORRECCIÓN: Nombre de imagen a minúsculas exactas */
 .united-characters {
     width: 320px; height: 400px; margin: 0 auto;
     background-image: url('img/penelope_odiseo.png'); 
